@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="container">
+                <div class="row" title="navbar">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 px-5">
+                            <a class="navbar-brand" href="#"><strong>PANORAMA</strong></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav w-100">
+                                    <li class="nav-item mx-3">
+                                        <a id="movies" class="nav-link" href="#">Kino <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item mx-3 active">
+                                        <a id="serials" class="nav-link" href="#">Serial</a>
+                                    </li>
+                                    <li class="nav-item mx-3">
+                                        <a id="cartoons" class="nav-link" href="#">Multfilm</a>
+                                    </li>
+                                    <li class="nav-item mx-3">
+                                        <a id="videos" class="nav-link" href="#">Video</a>
+                                    </li>
+                                    <li class="nav-item ml-auto">
+                                        <a class="nav-link" href="#">Kirish</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" title="carousel">
+            <div class="col-lg-12 p-0">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="img/slider.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>text</h1>
+                                <p>Text must be here</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/2.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>2017 yilning eng sara multiklari</h1>
+                                <p>Text must be here</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/1.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" title="mediaBox">
+            <div class="row mediaBox">
+                <h3 class="noresult">Hech nima topilmadi</h3>
+            </div>
+        </div>
+        <div class="modal fade" id="aboutError" tabindex="-1" role="dialog" aria-labelledby="aboutErrorlabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="aboutError">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="text-warning rating2"><span class="">☆</span></span>
+    </div>
+    <!-- <div class="row">
+        <div class="col-12">
+            <div title="login page" class="sr-only">
+                <div class="alert alert-success" role="alert">
+                    This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                </div>
+                <div class="row mt-2">
+                    <div class="col"></div>
+                    <div class="col-lg-4 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Kirish
+                            </div>
+                            <div class="card-body">
+                                <form class="">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="login">Login</label>
+                                        <input type="text" class="form-control" id="login" placeholder="Login">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="password">Parol</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Parolni kiriting">
+                                    </div>
+                                </form>
+                                <a href="#" class="btn btn-primary btn-lg" id="entry">Kirish</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/js.js"></script>
+    <script src="css/bootstrap/dist/js/popper.js/dist/umd/popper.js"></script>
+    <script src="css/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>
