@@ -1,0 +1,58 @@
+.movie-templete {
+    height: 300px;
+    width: 250px;
+    -webkit-box-shadow: 0 10px 6px -6px #eee;
+    -moz-box-shadow: 0 10px 6px -6px #eee;
+    box-shadow: 0 10px 6px -6px #eee;
+    background-color: #fff;
+}
+
+.movie-templete span {
+    color: #9c9c9c;
+}
+
+.bg-faded {
+    background-color: #ececec;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating>span:hover:before,
+.rating>span:hover~span:before {
+    content: "\2605";
+    position: absolute;
+}
+
+
+.new {
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    color: white;
+}
+
+.pos-r {
+    position: relative;
+}
+
+.carousel-item>img {
+    height: 500px;
+}
+
+nav a {
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}

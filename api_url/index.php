@@ -19,7 +19,7 @@ $movies = [
           'rating' => 2
         ],
         [
-          'name' => 'Suyunchi',
+          'name' => 'Suyunchi-serial',
           'year' => 2017,
           'isNew' => false,
           'type' => 'serial',
@@ -40,13 +40,13 @@ $movies = [
           'name' => 'Sakura',
           'year' => 2016,
           'isNew' => false,
-          'type' => 'cartoons',
+          'type' => 'cartoon',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
           'rating' => 4
         ],
         [
-          'name' => 'Sakura',
+          'name' => 'Sakur-serial',
           'year' => 2016,
           'isNew' => false,
           'type' => 'serial',
@@ -57,7 +57,7 @@ $movies = [
         [
           'name' => 'Yamamoto',
           'year' => 2016,
-          'isNew' => false,
+          'isNew' => true,
           'type' => 'movie',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
@@ -68,6 +68,33 @@ $movies = [
           'year' => 2016,
           'isNew' => false,
           'type' => 'cartoon',
+          'genre' => 'Melodramma',
+          'img' => 'img/photo4',
+          'rating' => 5
+        ],
+        [
+          'name' => 'Interesting Video',
+          'year' => 2016,
+          'isNew' => false,
+          'type' => 'video',
+          'genre' => 'Melodramma',
+          'img' => 'img/photo4',
+          'rating' => 5
+        ],
+        [
+          'name' => 'Sakura',
+          'year' => 2016,
+          'isNew' => false,
+          'type' => 'cartoon',
+          'genre' => 'Melodramma',
+          'img' => 'img/photo4',
+          'rating' => 5
+        ],
+        [
+          'name' => 'Video-Rolik',
+          'year' => 2016,
+          'isNew' => true,
+          'type' => 'video',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
           'rating' => 5

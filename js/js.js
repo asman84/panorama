@@ -80,4 +80,47 @@
                 $('#aboutError').modal({});
             });
         });
+        $('#serials').click(function() {
+            var request = $.ajax({
+                method: 'POST',
+                data: { type: 'serial' },
+                url: API_URL,
+                dataType: 'json'
+            });
+            request.then((response) => {
+                renderMovies(response);
+            });
+            request.fail((error) => {
+                $('#aboutError').modal({});
+            });
+        });
+        $('#cartoons').click(function() {
+            var request = $.ajax({
+                method: 'POST',
+                url: API_URL,
+                dataType: 'json',
+                data: { type: 'cartoon' }
+            });
+            request.then((response) => {
+                renderMovies(response);
+            });
+            request.fail((error) => {
+                $('#aboutError').modal({});
+            });
+        });
+        $('#videos').click(function() {
+            var request = $.ajax({
+                method: 'POST',
+                url: API_URL,
+                dataType: 'json',
+                data: { type: 'video' }
+            });
+            request.then((response) => {
+                renderMovies(response);
+            });
+            request.fail((error) => {
+                $('#aboutError').modal({});
+            })
+
+        });
     });
