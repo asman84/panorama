@@ -37,90 +37,68 @@
         }
     }
 
-    // @TODO FUNCTION REQUESTmoVIES
+    function showPlayer(item) {
+        var player = '';
+        player = '<div class="col-sm-12">\
+                      <video>\
+                        <source src="video/1.mp4" type="">\
+                      </video>\
+                  </div>';
+        return player;
+    }
+
+    function choosingTypes(elemtype) {
+        var dataToSend = {};
+        if (elemtype !== undefined) {
+            dataToSend = elemtype;
+        }
+        var request = $.ajax({
+            method: 'POST',
+            cache: false,
+            url: API_URL,
+            data: elemtype,
+            dataType: 'json'
+        });
+        request.then((response) => {
+            renderMovies(response);
+        });
+        request.fail((error) => {
+            $('#aboutError').modal({});
+        });
+    }
 
     function initApplication() {
         $('.noresult').hide();
         $('.carousel').carousel();
-        var movieRequest = $.ajax({
-            method: 'POST',
-            url: API_URL,
-            data: {}
-        });
-        movieRequest.then((response) => {
-
-            renderMovies(JSON.parse(response));
-        });
-        movieRequest.fail((error) => {
-            $('#aboutError').modal({});
-        });
+        choosingTypes();
     }
 
     $(document).ready(function($) {
         initApplication();
 
-        // CLICK @TODO
-        // REQEST
-        // RENDER
-
         $('#movies').click(function() {
+            choosingTypes({ type: 'movie' });
+        });
+
+        $('#serials').click(function() {
+            choosingTypes({ type: 'serial' });
+        });
+        $('#cartoons').click(function() {
+            choosingTypes({ type: 'cartoon' })
+        });
+        $('#videos').click(function() {
+            choosingTypes({ type: 'video' });
+
+        });
+        $('.mediaBox').click(function(item) {
             var request = $.ajax({
                 method: 'POST',
                 cache: false,
                 url: API_URL,
-                data: {
-                    type: 'movie'
-                },
+                data: { media: item.name },
                 dataType: 'json'
             });
-            request.then((response) => {
-                renderMovies(response);
-            });
-            request.fail((error) => {
-                $('#aboutError').modal({});
-            });
+            $(showPlayer(item)).insertAfter(this);
         });
-        $('#serials').click(function() {
-            var request = $.ajax({
-                method: 'POST',
-                data: { type: 'serial' },
-                url: API_URL,
-                dataType: 'json'
-            });
-            request.then((response) => {
-                renderMovies(response);
-            });
-            request.fail((error) => {
-                $('#aboutError').modal({});
-            });
-        });
-        $('#cartoons').click(function() {
-            var request = $.ajax({
-                method: 'POST',
-                url: API_URL,
-                dataType: 'json',
-                data: { type: 'cartoon' }
-            });
-            request.then((response) => {
-                renderMovies(response);
-            });
-            request.fail((error) => {
-                $('#aboutError').modal({});
-            });
-        });
-        $('#videos').click(function() {
-            var request = $.ajax({
-                method: 'POST',
-                url: API_URL,
-                dataType: 'json',
-                data: { type: 'video' }
-            });
-            request.then((response) => {
-                renderMovies(response);
-            });
-            request.fail((error) => {
-                $('#aboutError').modal({});
-            })
 
-        });
     });
