@@ -1,37 +1,27 @@
     const API_URL = 'http://panorama/api_url/';
 
     function renderMovies(items) {
+        $('.mediaBox').empty();
         if (items.length) {
-            $('.mediaBox').empty();
-            items.forEach(function(movie) {
-                var movieTemplate = '';
-
-                movieTemplate = '<div class="col-lg-3">\
-                               <div class="my-4 movie-templete pos-r">\
-                                  <img src="img/' + movie.img + '" class="">\
-                                  <div class="py-1 px-2">\
-                                      <h6 class="nameItem mb-0">' + movie.name + '</h6>\
-                                      <span class="year">' + movie.year + ' , </span>\
-                                      <span class="type">' + movie.genre + '</span>\
-                                      <span class="rating float-right">';
-                for (var i = 0; i < 5; i++) {
-                    if (i < movie.rating) {
-                        movieTemplate += '<span>☆</span>';
-                    }
+            items.forEach(function(item) {
+                var template = $('.template-mediaBox').html();
+                var badgeNew = $('.signNew').html();
+                var stars = $('.ratingSign').html();
+                $('.mediaBox').append(template);
+                $('.nameItem').last().text(item.name);
+                $('.movie-templete').last().attr('title', item.name);
+                $('.year').last().text(item.year);
+                $('.type').last().text(item.type);
+                $('.totalWatch').last().text(item.totalWatch);
+                if (item.isNew) {
+                    $('.movie-templete').last().append(badgeNew);
+                }
+                for (var i = 0; i < item.rating; i++) {
+                    $('.rating').last().append(stars);
                 }
 
-                movieTemplate += '</span>\
-                                    </div>';
-
-                if (movie.isNew) {
-                    movieTemplate += '<div class="new bg-danger text-center rounded-left">New</div>'
-                }
-                movieTemplate += '</div>\
-                                  </div>';
-
-
-                $('.mediaBox').append(movieTemplate);
             });
+
         } else {
             $('.noresult').show();
         }

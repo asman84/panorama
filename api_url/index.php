@@ -7,7 +7,8 @@ $movies = [
           'type' => 'movie',
           'genre' => 'comedy',
           'img' => 'application/bestPrice/img/slider33.jpg',
-          'rating' => 1
+          'rating' => 1,
+          'totalWatch' => 230
         ],
         [
           'name' => 'NottingHill',
@@ -16,7 +17,8 @@ $movies = [
           'type' => 'cartoon',
           'genre' => 'Triller',
           'img' => 'img/photo2',
-          'rating' => 2
+          'rating' => 4,
+          'totalWatch' => 18
         ],
         [
           'name' => 'Suyunchi-serial',
@@ -25,7 +27,8 @@ $movies = [
           'type' => 'serial',
           'genre' => 'Melodramma',
           'img' => 'img/photo3',
-          'rating' => 2
+          'rating' => 2,
+          'totalWatch' => 523
         ],
         [
           'name' => 'Sakura-kino',
@@ -34,7 +37,8 @@ $movies = [
           'type' => 'movie',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 3
+          'rating' => 3,
+          'totalWatch' => 123
         ],
         [
           'name' => 'Sakura',
@@ -43,7 +47,8 @@ $movies = [
           'type' => 'cartoon',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 4
+          'rating' => 4,
+          'totalWatch' => 203
         ],
         [
           'name' => 'Sakur-serial',
@@ -52,7 +57,8 @@ $movies = [
           'type' => 'serial',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 5,
+          'totalWatch' => 23
         ],
         [
           'name' => 'Yamamoto',
@@ -61,7 +67,8 @@ $movies = [
           'type' => 'movie',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 3,
+          'totalWatch' => 23
         ],
         [
           'name' => 'Sakura',
@@ -70,7 +77,8 @@ $movies = [
           'type' => 'cartoon',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 5,
+          'totalWatch' => 23
         ],
         [
           'name' => 'Interesting Video',
@@ -79,7 +87,8 @@ $movies = [
           'type' => 'video',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 5,
+          'totalWatch' => 23
         ],
         [
           'name' => 'Sakura',
@@ -88,7 +97,8 @@ $movies = [
           'type' => 'cartoon',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 5,
+          'totalWatch' => 23
         ],
         [
           'name' => 'Video-Rolik',
@@ -97,7 +107,8 @@ $movies = [
           'type' => 'video',
           'genre' => 'Melodramma',
           'img' => 'img/photo4',
-          'rating' => 5
+          'rating' => 5,
+          'totalWatch' => 23
         ],
     ];
 function filterMovie($movie) {

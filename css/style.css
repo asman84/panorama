@@ -15,8 +15,8 @@
     background-color: #ececec;
 }
 
-img {
-    height: 250px;
+.movie-templete img {
+    min-height: 250px;
     width: 250px;
 }
 
@@ -31,12 +31,11 @@ img {
     position: absolute;
 }
 
-
 .new {
     height: 30px;
     width: 70px;
     position: absolute;
-    top: 20px;
+    top: 5%;
     right: 0px;
     color: white;
 }
@@ -55,4 +54,44 @@ nav a {
 
 .navbar-brand {
     font-size: 24px;
+}
+
+.movieImage {
+    height: : 600px;
+    width: 600px;
+    color: #ececec;
+}
+
+.img-xs {
+    width: 25px;
+    height: 25px;
+}
+
+.img-sm {
+    width: 35px;
+    height: 35px;
+}
+
+.img-md {
+    width: 60px;
+    height: 60px;
+}
+
+.img-lg {
+    width: 90px;
+    height: 90px;
+}
+
+.img-xl {
+    width: 125px;
+    height: 125px;
+}
+
+.bg-red {
+    background-color: #54151b;
+}
+
+.comments-list {
+    overflow: auto;
+    max-height: 190px;
 }
