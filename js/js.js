@@ -1,5 +1,25 @@
     const API_URL = 'http://panorama/api_url/';
 
+    function assert(expected, actual, testName) {
+        if (actual === expected) {
+            console.log('Expected ' + expected + ' . the result of function is ' + actual)
+        } else {
+            console.log('Expected ' + expected + ' but result of your code is ' + actual)
+        }
+    }
+
+    function choosePositionForDetailBox(index, finalIndex) {
+        if (Math.floor(index / 4) === Math.floor(finalIndex / 4)) {
+            return finalIndex;
+        } else {
+            return 4 * (Math.floor(index / 4) + 1) - 1;
+        }
+    }
+
+    function renderDetails(item) {
+
+    }
+
     function renderMovies(items) {
         $('.mediaBox').empty();
         if (items.length) {
@@ -19,23 +39,16 @@
                 for (var i = 0; i < item.rating; i++) {
                     $('.rating').last().append(stars);
                 }
-
             });
-
+            $('.movieBox').click(function() {
+                var positionToAppend = choosePositionForDetailBox($(this).index(), $('.movieBox').last().index());
+                $('.movieBox').eq(positionToAppend).after($('.movieInfoAndComment').html());
+            });
         } else {
             $('.noresult').show();
         }
     }
 
-    function showPlayer(item) {
-        var player = '';
-        player = '<div class="col-sm-12">\
-                      <video>\
-                        <source src="video/1.mp4" type="">\
-                      </video>\
-                  </div>';
-        return player;
-    }
 
     function choosingTypes(elemtype) {
         var dataToSend = {};
@@ -78,17 +91,6 @@
         });
         $('#videos').click(function() {
             choosingTypes({ type: 'video' });
-
-        });
-        $('.mediaBox').click(function(item) {
-            var request = $.ajax({
-                method: 'POST',
-                cache: false,
-                url: API_URL,
-                data: { media: item.name },
-                dataType: 'json'
-            });
-            $(showPlayer(item)).insertAfter(this);
         });
 
     });
