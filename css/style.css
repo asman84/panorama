@@ -95,3 +95,8 @@ nav a {
     overflow: auto;
     max-height: 190px;
 }
+
+.movieInfo-box {
+    overflow: auto;
+    max-height: 250px;
+}

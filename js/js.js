@@ -16,10 +16,6 @@
         }
     }
 
-    function renderDetails(item) {
-
-    }
-
     function renderMovies(items) {
         $('.mediaBox').empty();
         if (items.length) {
@@ -39,16 +35,37 @@
                 for (var i = 0; i < item.rating; i++) {
                     $('.rating').last().append(stars);
                 }
-            });
-            $('.movieBox').click(function() {
-                var positionToAppend = choosePositionForDetailBox($(this).index(), $('.movieBox').last().index());
-                $('.movieBox').eq(positionToAppend).after($('.movieInfoAndComment').html());
+                $('.movieBox').last().click(function() {
+                    $('.infoUnderVideo').hide();
+                    var lastIndex = $('.movieBox').length - 1;
+                    var positionToAppend = choosePositionForDetailBox($(this).index(), lastIndex);
+                    var details = $('.movieInfoAndComment').html();
+                    $('.movieBox').eq(positionToAppend).after(details);
+                    $('.detailName').text(item.name);
+                    $('.genre').text(item.genre);
+                    $('.year').text(item.year);
+                    $('.infoAboutMovie').text(item.details);
+                    console.log(item);
+                    console.log(item.id);
+                    var requestForComments = $.ajax({
+                        method: 'POST',
+                        url: API_URL,
+                        cache: false,
+                        dataType: 'json',
+                        data: {
+                            'id': item.id,
+                            'action': 'comment'
+                        }
+                    });
+                    requestForComments.then((response) => {
+
+                    });
+                });
             });
         } else {
             $('.noresult').show();
         }
     }
-
 
     function choosingTypes(elemtype) {
         var dataToSend = {};
@@ -73,24 +90,24 @@
     function initApplication() {
         $('.noresult').hide();
         $('.carousel').carousel();
-        choosingTypes();
+        choosingTypes({ action: 'movies' });;
     }
 
     $(document).ready(function($) {
         initApplication();
 
         $('#movies').click(function() {
-            choosingTypes({ type: 'movie' });
+            choosingTypes({ type: 'movie', action: 'movies' });
         });
 
         $('#serials').click(function() {
-            choosingTypes({ type: 'serial' });
+            choosingTypes({ type: 'serial', action: 'movies' });
         });
         $('#cartoons').click(function() {
-            choosingTypes({ type: 'cartoon' })
+            choosingTypes({ type: 'cartoon', action: 'movies' })
         });
         $('#videos').click(function() {
-            choosingTypes({ type: 'video' });
+            choosingTypes({ type: 'video', action: 'movies' });
         });
 
     });
