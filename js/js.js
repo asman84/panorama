@@ -88,6 +88,11 @@
     }
 
     function initApplication() {
+        $('.container-fluid').loading({
+            overlay: true,
+            base: 0.2,
+            circles: 3
+        });
         $('.noresult').hide();
         $('.carousel').carousel();
         choosingTypes({ action: 'movies' });

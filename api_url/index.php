@@ -190,6 +190,8 @@ $movies = [
         ],
     ];
 
+sleep(5);
+
 function router(){
   switch($_POST['action']) {
     case 'comment':
@@ -202,7 +204,7 @@ function router(){
 }
 
 function filterComment($comment) {
-  return $comments['id'] == $_POST['id'];
+  return $comment['id'] == $_POST['id'];
 }
 
 function filterMovie($movie) {
