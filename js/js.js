@@ -16,6 +16,15 @@
         }
     }
 
+    function renderComments(comments) {
+        comments.forEach(function(item) {
+            $('.commentator').text(item.commentator);
+            $('.comment').text(item.comment);
+            $('.comment-box').append($('.comment-example').html());
+            console.log($('.comment-box'));
+        });
+    }
+
     function renderMovies(items) {
         $('.mediaBox').empty();
         if (items.length) {
@@ -46,7 +55,6 @@
                     $('.year').text(item.year);
                     $('.infoAboutMovie').text(item.details);
                     $('.movieInfo-box').after($('.comment-template').html());
-                    $('.comments-list').last().append($('.comment-example').html());
                     var requestForComments = $.ajax({
                         method: 'POST',
                         url: API_URL,
@@ -58,7 +66,7 @@
                         }
                     });
                     requestForComments.then((response) => {
-
+                        renderComments(response);
                     });
                 });
             });
@@ -72,6 +80,7 @@
         if (elemtype !== undefined) {
             dataToSend = elemtype;
         }
+        $('.mediaBox').loading({ circles: 3, overlay: true, width: 100 });
         var request = $.ajax({
             method: 'POST',
             cache: false,
@@ -80,7 +89,7 @@
             dataType: 'json'
         });
         request.then((response) => {
-            $('.container-fluid').loading({ hide: true });
+            $('.mediaBox').loading({ destroy: true });
             renderMovies(response);
         });
         request.fail((error) => {
@@ -90,7 +99,6 @@
 
     function initApplication() {
         $('.noresult').hide();
-        $('.container-fluid').loading({ circles: 3, overlay: true, base: 0.2 });
         $('.carousel').carousel();
         choosingTypes({ action: 'movies' });
     }

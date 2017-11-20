@@ -190,7 +190,7 @@ $movies = [
         ],
     ];
 
-sleep(5);
+sleep(1);
 
 function router(){
   switch($_POST['action']) {

@@ -100,3 +100,7 @@ nav a {
     overflow: auto;
     max-height: 250px;
 }
+
+.mediaBox {
+    min-height: 150px;
+}
