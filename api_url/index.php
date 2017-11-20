@@ -7,6 +7,24 @@ $comments =[
         'date' => '2017-11-11 10:20:20'
         ],
         [
+        'id' => 1,
+        'commentator' => 'Jane',
+        'comment' => 'I liked this film. this is awesome film, that everyone in his',
+        'date' => '2017-11-11 10:20:20'
+        ],
+        [
+        'id' => 1,
+        'commentator' => 'Anna',
+        'comment' => 'I liked this film. this is awesome film, that everyone in his',
+        'date' => '2017-11-11 10:20:20'
+        ],
+        [
+        'id' => 1,
+        'commentator' => 'Dilya',
+        'comment' => 'I liked this film. this is awesome film, that everyone in his',
+        'date' => '2017-11-11 10:20:20'
+        ],
+        [
         'id' => 2,
         'commentator' => 'Jennifer',
         'comment' => 'I should admit that I liked this film.',
@@ -15,7 +33,7 @@ $comments =[
         [
         'id' => 3,
         'commentator' => 'Kate',
-        'comment' => 'I should admit that I liked this film.',
+        'comment' => 'lorem and ipsum I liked this film.',
         'date' => '2017-11-18 02:14:20'
         ],
         [

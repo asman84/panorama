@@ -18,10 +18,13 @@
 
     function renderComments(comments) {
         comments.forEach(function(item) {
-            $('.commentator').text(item.commentator);
-            $('.comment').text(item.comment);
-            $('.comment-box').append($('.comment-example').html());
-            console.log($('.comment-box'));
+            $('.comments-list').append($('.comment-example').html());
+            $('.commentator').last().text(item.commentator);
+            $('.comment').last().text(item.comment);
+        });
+        $('.loadMoreComment').click(function() {
+            $('.comments-list').toggleClass('loadMore');
+            $('.comments-list').scrollTop(0);
         });
     }
 
@@ -50,9 +53,10 @@
                     var positionToAppend = choosePositionForDetailBox($(this).index(), lastIndex);
                     var details = $('.movieInfoAndComment').html();
                     $('.movieBox').eq(positionToAppend).after(details);
-                    $('.detailName').text(item.name);
-                    $('.genre').text(item.genre);
-                    $('.year').text(item.year);
+                    $('.infoUnderVideo').loading({ circles: 3, overlay: true, width: 75 });
+                    $('.detailName').last().text(item.name);
+                    $('.genre').last().text(item.genre);
+                    $('.year').last().text(item.year);
                     $('.infoAboutMovie').text(item.details);
                     $('.movieInfo-box').after($('.comment-template').html());
                     var requestForComments = $.ajax({
@@ -67,6 +71,7 @@
                     });
                     requestForComments.then((response) => {
                         renderComments(response);
+                        $('.infoUnderVideo').loading({ destroy: true });
                     });
                 });
             });
@@ -110,12 +115,11 @@
             choosingTypes({ type: 'movie', action: 'movies' });
             // $('.navbar-nav. nav-item').removeClass('active');
             $('#movies').parent().addClass('active');
-            elem.preventDefault();
-            var sectionID = elem.currentTarget.id + '-section';
-            console.log(sectionID);
-            $('html body').animate({
-                scrollTop: $('.movieBox').offset(200).top
-            }, 1000);
+            // elem.preventDefault();
+            // var sectionID = elem.currentTarget.id + '-section';
+            // $('html body').animate({
+            //     scrollTop: $('.movieBox').offset(200).top
+            // }, 1000);
         });
 
         $('#serials').click(function() {
