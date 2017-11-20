@@ -80,6 +80,7 @@
             dataType: 'json'
         });
         request.then((response) => {
+            $('.container-fluid').loading({ hide: true });
             renderMovies(response);
         });
         request.fail((error) => {
@@ -88,12 +89,8 @@
     }
 
     function initApplication() {
-        $('.container-fluid').loading({
-            overlay: true,
-            base: 0.2,
-            circles: 3
-        });
         $('.noresult').hide();
+        $('.container-fluid').loading({ circles: 3, overlay: true, base: 0.2 });
         $('.carousel').carousel();
         choosingTypes({ action: 'movies' });
     }
