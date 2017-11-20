@@ -214,12 +214,12 @@ function filterMovie($movie) {
 }
 function getComment() {
   global $comments;
-  print json_encode(array_values(array_filter($comments, 'filterMovie')));
+  print json_encode(array_values(array_filter($comments,'filterComment' )));
 }
 
 function getMovies() {
   global $movies;
-  print json_encode(array_values(array_filter($movies, 'filterComment')));
+  print json_encode(array_values(array_filter($movies,'filterMovie')));
 }
 router();
 

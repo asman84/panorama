@@ -45,8 +45,8 @@
                     $('.genre').text(item.genre);
                     $('.year').text(item.year);
                     $('.infoAboutMovie').text(item.details);
-                    console.log(item);
-                    console.log(item.id);
+                    $('.movieInfo-box').after($('.comment-template').html());
+                    $('.comments-list').last().append($('.comment-example').html());
                     var requestForComments = $.ajax({
                         method: 'POST',
                         url: API_URL,
@@ -90,24 +90,38 @@
     function initApplication() {
         $('.noresult').hide();
         $('.carousel').carousel();
-        choosingTypes({ action: 'movies' });;
+        choosingTypes({ action: 'movies' });
     }
 
     $(document).ready(function($) {
         initApplication();
 
-        $('#movies').click(function() {
+        $('#movies').click(function(elem) {
             choosingTypes({ type: 'movie', action: 'movies' });
+            // $('.navbar-nav. nav-item').removeClass('active');
+            $('#movies').parent().addClass('active');
+            elem.preventDefault();
+            var sectionID = elem.currentTarget.id + '-section';
+            console.log(sectionID);
+            $('html body').animate({
+                scrollTop: $('.movieBox').offset(200).top
+            }, 1000);
         });
 
         $('#serials').click(function() {
             choosingTypes({ type: 'serial', action: 'movies' });
+            // $('.navbar-nav. nav-item').removeClass('active');
+            $('#serials').parent().addClass('active');
         });
         $('#cartoons').click(function() {
-            choosingTypes({ type: 'cartoon', action: 'movies' })
+            choosingTypes({ type: 'cartoon', action: 'movies' });
+            // $('.navbar-nav. nav-item').removeClass('active');
+            $('#cartoons').parent().addClass('active');
         });
         $('#videos').click(function() {
             choosingTypes({ type: 'video', action: 'movies' });
+            // $('.navbar-nav. nav-item').removeClass('active');
+            $('#videos').parent().addClass('active');
         });
 
     });
