@@ -21,15 +21,14 @@
             $('.comments-list').append($('.comment-example').html());
             $('.commentator').last().text(item.commentator);
             $('.comment').last().text(item.comment);
-            $('.comments').hide();
-            // if (index > 1) {
-            //     // $('.comments').last().hide();
-            //     console.log($('.comments').last());
-            // }
+            if (index > 1) {
+                $('.comments').last().hide();
+            }
         });
         $('.loadMoreComment').click(function() {
-            $('.comments-list').toggleClass('loadMore');
-            $('.comments-list').scrollTop(0);
+            $('.comments').toggle('hide()');
+            console.log('test load');
+            // $('.comments-list').scrollTop(0);
         });
     }
 
