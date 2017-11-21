@@ -17,19 +17,23 @@
     }
 
     function renderComments(comments) {
-        comments.forEach(function(item, index) {
-            $('.comments-list').append($('.comment-example').html());
-            $('.commentator').last().text(item.commentator);
-            $('.comment').last().text(item.comment);
-            if (index > 1) {
-                $('.comments').last().hide();
-            }
-        });
-        $('.loadMoreComment').click(function() {
-            $('.comments:hidden').toggle('hide()');
-            console.log('test load');
-            // $('.comments-list').scrollTop(0);
-        });
+        if (comments.length === 0) {
+            $('.beFirst').show();
+        } else {
+            comments.forEach(function(item, index) {
+                $('.opinions').show();
+                $('.comments-list').append($('.comment-example').html());
+                $('.commentator').last().text(item.commentator);
+                $('.comment').last().text(item.comment);
+                if (index > 1) {
+                    $('.comments').last().hide();
+                }
+            });
+            $('.loadMoreComment').click(function() {
+                $('.comments:hidden').toggle('hide()');
+                $('.loadMoreComment').hide();
+            });
+        }
     }
 
     function renderMovies(items) {
@@ -63,6 +67,8 @@
                     $('.year').last().text(item.year);
                     $('.infoAboutMovie').text(item.details);
                     $('.movieInfo-box').after($('.comment-template').html());
+                    $('.beFirst').hide();
+                    $('.opinions').hide();
                     var requestForComments = $.ajax({
                         method: 'POST',
                         url: API_URL,
