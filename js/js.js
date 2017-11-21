@@ -26,7 +26,7 @@
             }
         });
         $('.loadMoreComment').click(function() {
-            $('.comments').toggle('hide()');
+            $('.comments:hidden').toggle('hide()');
             console.log('test load');
             // $('.comments-list').scrollTop(0);
         });
@@ -52,7 +52,7 @@
                     $('.rating').last().append(stars);
                 }
                 $('.movieBox').last().click(function() {
-                    $('.infoUnderVideo').hide();
+                    $('.infoUnderVideo').remove();
                     var lastIndex = $('.movieBox').length - 1;
                     var positionToAppend = choosePositionForDetailBox($(this).index(), lastIndex);
                     var details = $('.movieInfoAndComment').html();

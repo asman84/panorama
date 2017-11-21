@@ -33,13 +33,13 @@ $comments =[
         [
         'id' => 3,
         'commentator' => 'Kate',
-        'comment' => 'lorem and ipsum I liked this film.',
+        'comment' => 'lorem and ipsum I liked this film.I liked this film.I liked this film.I liked this film.',
         'date' => '2017-11-18 02:14:20'
         ],
         [
         'id' => 3,
         'commentator' => 'Jennifer',
-        'comment' => 'NottingHill is also nice film.I should admit that I liked this film.',
+        'comment' => 'NottingHill is also nice film.I should admit that I ldsdiked this dsdsddddddddddddddddddddd film.',
         'date' => '2017-11-18 06:50:20',
         ],
         [

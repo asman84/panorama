@@ -97,12 +97,13 @@ nav a {
 }
 
 
-
-/*
-.loadMore {
-    overflow: auto;
+.comments div:nth-child(1) {
+    width: 8%;
 }
-*/
+
+.comments div:nth-child(2) {
+    width: 90%;
+}
 
 .movieInfo-box {
     overflow: auto;
