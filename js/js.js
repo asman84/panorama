@@ -17,10 +17,15 @@
     }
 
     function renderComments(comments) {
-        comments.forEach(function(item) {
+        comments.forEach(function(item, index) {
             $('.comments-list').append($('.comment-example').html());
             $('.commentator').last().text(item.commentator);
             $('.comment').last().text(item.comment);
+            $('.comments').hide();
+            // if (index > 1) {
+            //     // $('.comments').last().hide();
+            //     console.log($('.comments').last());
+            // }
         });
         $('.loadMoreComment').click(function() {
             $('.comments-list').toggleClass('loadMore');

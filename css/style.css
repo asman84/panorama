@@ -92,13 +92,16 @@ nav a {
 }
 
 .comments-list {
-    overflow: hidden;
+    overflow: auto;
     max-height: 170px;
 }
 
+
+/*
 .loadMore {
     overflow: auto;
 }
+*/
 
 .movieInfo-box {
     overflow: auto;
