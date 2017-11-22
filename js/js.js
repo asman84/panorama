@@ -23,7 +23,11 @@
             comments.forEach(function(item, index) {
                 $('.opinions').show();
                 $('.comments-list').append($('.comment-example').html());
-                $('.commentator').last().text(item.commentator);
+                $('.commentator').last().text(item.commentator.name);
+                $('.commentator-img').last().attr('src', item.commentator.img);
+                $('.commentator').last().attr('href', item.commentator.profile_link);
+                var ago = moment(item.date).fromNow();
+                $('.timeofComment').last().text(ago);
                 $('.comment').last().text(item.comment);
                 if (index > 1) {
                     $('.comments').last().hide();
@@ -61,12 +65,13 @@
                     var positionToAppend = choosePositionForDetailBox($(this).index(), lastIndex);
                     var details = $('.movieInfoAndComment').html();
                     $('.movieBox').eq(positionToAppend).after(details);
-                    $('.infoUnderVideo').loading({ circles: 3, overlay: true, width: 75 });
                     $('.detailName').last().text(item.name);
                     $('.genre').last().text(item.genre);
                     $('.year').last().text(item.year);
+                    console.log(item.year);
                     $('.infoAboutMovie').text(item.details);
                     $('.movieInfo-box').after($('.comment-template').html());
+                    $('.comments-box').loading({ circles: 3, overlay: true, width: 75 });
                     $('.beFirst').hide();
                     $('.opinions').hide();
                     var requestForComments = $.ajax({
@@ -81,7 +86,7 @@
                     });
                     requestForComments.then((response) => {
                         renderComments(response);
-                        $('.infoUnderVideo').loading({ destroy: true });
+                        $('.comments-box').loading({ destroy: true });
                     });
                 });
             });

@@ -96,6 +96,13 @@ nav a {
     max-height: 170px;
 }
 
+.commentator {
+    color: #212529;
+}
+
+.commentator:hover {
+    text-decoration: none;
+}
 
 .comments div:nth-child(1) {
     width: 8%;
@@ -103,6 +110,7 @@ nav a {
 
 .comments div:nth-child(2) {
     width: 90%;
+    font-size: 0.90rem;
 }
 
 .movieInfo-box {

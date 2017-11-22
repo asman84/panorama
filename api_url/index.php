@@ -2,49 +2,49 @@
 $comments =[
         [
         'id' => 1,
-        'commentator' => 'Ann',
+        'commentator' => ['name' => 'Ann','img' => 'img/profile3.jpg','profile_link' => 'user/123'],
+        'comment' => 'I liked this film. this is awesome film, that everyone in his',
+        'date' => '2017-11-08 10:20:20'
+        ],
+        [
+        'id' => 1,
+        'commentator' => ['name' => 'Jane','img' => 'img/profile4.jpg','profile_link' => 'user/124'],
+        'comment' => 'I liked this film. this is awesome film, that everyone in his',
+        'date' => '2017-11-22 00:20:20'
+        ],
+        [
+        'id' => 1,
+        'commentator' => ['name' => 'Anna','img' => 'img/profile5.jpg','profile_link' => 'user/125'],
         'comment' => 'I liked this film. this is awesome film, that everyone in his',
         'date' => '2017-11-11 10:20:20'
         ],
         [
         'id' => 1,
-        'commentator' => 'Jane',
+        'commentator' => ['name' => 'Dilya','img' => 'img/profile6.jpg','profile_link' => 'user/126'],
         'comment' => 'I liked this film. this is awesome film, that everyone in his',
-        'date' => '2017-11-11 10:20:20'
-        ],
-        [
-        'id' => 1,
-        'commentator' => 'Anna',
-        'comment' => 'I liked this film. this is awesome film, that everyone in his',
-        'date' => '2017-11-11 10:20:20'
-        ],
-        [
-        'id' => 1,
-        'commentator' => 'Dilya',
-        'comment' => 'I liked this film. this is awesome film, that everyone in his',
-        'date' => '2017-11-11 10:20:20'
+        'date' => '2017-11-15 10:20:20'
         ],
         [
         'id' => 2,
-        'commentator' => 'Jennifer',
-        'comment' => 'I should admit that I liked this film.',
+        'commentator' => ['name' => 'Jennifer','img' => 'img/profile7.jpg','profile_link' => 'user/127'],
+        'comment' => 'I should admit that I liked thvvvvvvvvvvvvvvvis film.',
         'date' => '2017-11-18 13:23:20'
         ],
         [
         'id' => 3,
-        'commentator' => 'Kate',
+        'commentator' => ['name' => 'Kate','img' => 'img/profile8.jpg','profile_link' => 'user/128'],
         'comment' => 'lorem and ipsum I liked this film.I liked this film.I liked this film.I liked this film.',
-        'date' => '2017-11-18 02:14:20'
+        'date' => '2017-11-17 02:14:20'
         ],
         [
         'id' => 3,
-        'commentator' => 'Jennifer',
+        'commentator' => ['name' => 'Jennifer','img' => 'img/profile7.jpg','profile_link' => 'user/127'],
         'comment' => 'NottingHill is also nice film.I should admit that I ldsdiked this dsdsddddddddddddddddddddd film.',
-        'date' => '2017-11-18 06:50:20',
+        'date' => '2016-11-18 06:50:20',
         ],
         [
         'id' => 1,
-        'commentator' => 'Kate',
+        'commentator' => ['name' => 'Kate','img' => 'img/profile8.jpg','profile_link' => 'user/128'],
         'comment' => 'I should admit that I liked this film.',
         'date' => '2017-11-18 19:10:20',
         ]
@@ -60,7 +60,7 @@ $movies = [
           'img' => 'application/bestPrice/img/slider33.jpg',
           'rating' => 1,
           'totalWatch' => 230,
-          'details' => 'I saw this film in Los Angeles, in 2010. Mimino was awarded 13 times.'
+          'details' => 'I saw this film in Los Angeles, in 2010. M13 times.'
         ],
         [
           'name' => 'NottingHill',
@@ -72,7 +72,7 @@ $movies = [
           'img' => 'img/photo2',
           'rating' => 4,
           'totalWatch' => 18,
-          'details' => 'Bred Pitt was the most popular in Los Angeles, in 2010.'
+          'details' => 'Bred Pitt was the mosxct to see it is worth popular in Los Angeles, in 2010.'
         ],
         [
           'name' => 'Suyunchi-serial',
